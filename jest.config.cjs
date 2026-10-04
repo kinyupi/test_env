@@ -1,0 +1,11 @@
+// test-env/jest.config.cjs
+module.exports = {
+  testEnvironment: "jsdom",
+  transform: {
+    "^.+\\.jsx?$": ["esbuild-jest", { "loader": "js", "target": "es2020" }],
+    "^.+\\.m?js$": ["esbuild-jest", { "loader": "js", "target": "es2020" }]
+  },
+  moduleFileExtensions: ["js", "mjs", "cjs", "json"],
+  testMatch: ["**/__tests__/**/*.test.[jt]s?(x)"],
+  roots: ["<rootDir>/src", "<rootDir>/__tests__"]
+};

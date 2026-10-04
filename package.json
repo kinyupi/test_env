@@ -1,0 +1,16 @@
+{
+  "name": "project-test-env",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "jest --config ./jest.config.cjs"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "esbuild-jest": "^0.5.0",
+    "esbuild": "^0.18.0",
+    "jsdom": "^22.0.0"
+  }
+}
+

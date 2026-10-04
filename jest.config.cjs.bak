@@ -1,0 +1,9 @@
+module.exports = {
+  testEnvironment: 'jsdom',
+  transform: {
+    '^.+\\.m?jsx?$': 'esbuild-jest'
+  },
+  transformIgnorePatterns: ['/node_modules/'],
+  moduleFileExtensions: ['js', 'mjs', 'cjs', 'json', 'node'],
+  testMatch: ['**/tests/**/*.test.[jt]s?(x)']
+};
