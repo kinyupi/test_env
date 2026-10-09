@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "test": "jest --config ./jest.config.cjs"
+"scripts": {
+  "test": "jest --config ./jest.config.cjs --runInBand"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",
     "jest": "^30.5.2",
     "jsdom": "^22.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "@parcel/watcher@2.6.0": true
   }
 }

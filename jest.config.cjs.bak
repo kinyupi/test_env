@@ -1,9 +1,18 @@
+// test-env/jest.config.cjs
 module.exports = {
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
   transform: {
-    '^.+\\.m?jsx?$': 'esbuild-jest'
+    "^.+\\.jsx?$": ["esbuild-jest", { loader: "js", target: "es2020" }],
+    "^.+\\.m?js$": ["esbuild-jest", { loader: "js", target: "es2020" }]
   },
-  transformIgnorePatterns: ['/node_modules/'],
-  moduleFileExtensions: ['js', 'mjs', 'cjs', 'json', 'node'],
-  testMatch: ['**/tests/**/*.test.[jt]s?(x)']
+  moduleFileExtensions: ["js", "mjs", "cjs", "json"],
+  testMatch: ["**/__tests__/**/*.test.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+  roots: ["<rootDir>/src", "<rootDir>/__tests__", "<rootDir>/tests"],
+  moduleNameMapper: {
+    "\\.(css|scss|less)$": "<rootDir>/tests/__mocks__/styleMock.cjs",
+    "\\.(png|jpg|jpeg|gif|svg)$": "<rootDir>/tests/__mocks__/fileMock.cjs"
+  },
+  testTimeout: 30000,
+  verbose: true
 };
+
